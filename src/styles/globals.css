@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+@import './tokens.css';
+@import './components.css';
+@import './app-screens.css';
+@import './page.css';
+@import './site.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme-aware values that are not brand tokens: the macOS window chrome and the tour backdrop. */
+:root {
+  --mac-top: #f9fafc;
+  --mac-bottom: #eff2f7;
+  --mac-edge: rgba(11, 36, 99, 0.12);
+  --mac-field: #ffffff;
+  --showcase-bg: linear-gradient(160deg, #eef2fa 0%, #f6f8fb 55%, #e9f8f0 100%);
+  --logo-ink: var(--navy-900);
+  --logo-plus: var(--green-500);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --mac-top: #16234a;
+    --mac-bottom: #111c3d;
+    --mac-edge: rgba(255, 255, 255, 0.09);
+    --mac-field: #0a1430;
+    --showcase-bg: linear-gradient(160deg, #0f1d44 0%, #0a1532 60%, #0c2a2c 100%);
+    --logo-ink: #ffffff;
+    --logo-plus: var(--green-400);
+  }
+}
+:root.dark {
+  --mac-top: #16234a;
+  --mac-bottom: #111c3d;
+  --mac-edge: rgba(255, 255, 255, 0.09);
+  --mac-field: #0a1430;
+  --showcase-bg: linear-gradient(160deg, #0f1d44 0%, #0a1532 60%, #0c2a2c 100%);
+  --logo-ink: #ffffff;
+  --logo-plus: var(--green-400);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
