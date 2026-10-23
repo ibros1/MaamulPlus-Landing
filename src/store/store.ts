@@ -1,13 +1,13 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { api } from './api';
+import { combineSlices, configureStore, createDynamicMiddleware } from '@reduxjs/toolkit';
 import { consentSlice, writeStoredConsent } from './consentSlice';
 import { uiSlice } from './uiSlice';
 
-const rootReducer = combineReducers({
-  [api.reducerPath]: api.reducer,
-  ui: uiSlice.reducer,
-  consent: consentSlice.reducer,
-});
+/**
+ * The always-loaded state is tiny (ui + consent). The RTK Query `api` slice is injected
+ * by src/store/api.ts when a form loads, so its code stays out of the first page load.
+ */
+export const rootReducer = combineSlices(uiSlice, consentSlice);
+export const dynamicMiddleware = createDynamicMiddleware();
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -16,7 +16,7 @@ export function makeStore(preloadedState?: Partial<RootState>) {
   const store = configureStore({
     reducer: rootReducer,
     ...(preloadedState ? { preloadedState } : {}),
-    middleware: (getDefault) => getDefault().concat(api.middleware),
+    middleware: (getDefault) => getDefault().concat(dynamicMiddleware.middleware),
   });
   // Persist the consent choice whenever it changes.
   let last = store.getState().consent.analytics;

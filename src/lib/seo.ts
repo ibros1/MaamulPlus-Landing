@@ -48,7 +48,9 @@ export function buildMetadata({
   modifiedTime,
 }: BuildMetadataInput): Metadata {
   const url = absoluteUrl(path);
-  const images = ogImage ? [{ url: ogImage, width: 1200, height: 630, alt: title }] : undefined;
+  // Routes with their own opengraph-image file override this (file-based metadata wins);
+  // every other page falls back to the site-wide image.
+  const images = [{ url: ogImage ?? '/opengraph-image', width: 1200, height: 630, alt: title }];
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -63,7 +65,7 @@ export function buildMetadata({
       description,
       siteName: site.name,
       locale: site.locale,
-      ...(images ? { images } : {}),
+      images,
       ...(type === 'article' && publishedTime ? { publishedTime } : {}),
       ...(type === 'article' && modifiedTime ? { modifiedTime } : {}),
     },
@@ -71,7 +73,7 @@ export function buildMetadata({
       card: 'summary_large_image',
       title,
       description,
-      ...(images ? { images: images.map((i) => i.url) } : {}),
+      images: images.map((i) => i.url),
       ...(site.twitterHandle ? { site: site.twitterHandle, creator: site.twitterHandle } : {}),
     },
     ...(noindex ? { robots: { index: false, follow: false, googleBot: { index: false, follow: false } } } : {}),

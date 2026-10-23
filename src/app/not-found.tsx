@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="mp">
-      <NavBar appUrl={site.appUrl} />
+      <NavBar appUrls={site.appUrls} />
       <main id="main">
         <section className="page-hero page-hero--center" aria-labelledby="page-title">
           <div className="wrap">

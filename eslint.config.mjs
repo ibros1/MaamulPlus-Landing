@@ -7,6 +7,7 @@ export default tseslint.config(
   {
     ignores: [
       '.next/**',
+      '.next-prod/**',
       'node_modules/**',
       'maamulplus-website-kit/**',
       'next-env.d.ts',

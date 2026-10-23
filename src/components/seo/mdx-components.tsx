@@ -39,8 +39,9 @@ export const mdxComponents = {
         {children}
       </a>
     ),
+  // Wide tables scroll on phones; the region is focusable and named after its columns so each is unique.
   table: (props: ComponentPropsWithoutRef<'table'>) => (
-    <div className="table-scroll" tabIndex={0} role="region" aria-label="Table">
+    <div className="table-scroll" tabIndex={0} role="region" aria-label={`Table: ${text(props.children).slice(0, 80)}`}>
       <table {...props} />
     </div>
   ),

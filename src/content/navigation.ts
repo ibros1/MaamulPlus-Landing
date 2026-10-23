@@ -18,6 +18,11 @@ export const mainNav: NavLink[] = [
 export const navCopy = {
   skip: 'Skip to content',
   signIn: 'Sign in',
+  signInMenu: 'Choose your edition',
+  signInEditions: {
+    enterprise: { label: 'MaamulPlus Enterprise', hint: 'Accounting, branches, agents and payroll', mobile: 'Sign in to Enterprise' },
+    lite: { label: 'MaamulPlus Lite', hint: 'Sales, stock, credit and payments', mobile: 'Sign in to Lite' },
+  },
   cta: 'Book a demo',
   openMenu: 'Open menu',
   closeMenu: 'Close menu',

@@ -10,7 +10,7 @@ export default function MarketingLayout({ children }: { children: ReactNode }) {
       <a className="skip-link" href="#main">
         {navCopy.skip}
       </a>
-      <NavBar appUrl={site.appUrl} />
+      <NavBar appUrls={site.appUrls} />
       <main id="main" tabIndex={-1}>
         {children}
       </main>

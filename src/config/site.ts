@@ -5,12 +5,14 @@
  */
 type Fill<T> = T | null;
 
+export type Edition = 'enterprise' | 'lite';
+
 export interface SiteConfig {
   name: string;
   legalName: string;
   url: string;
-  /** [[FILL]] Sign-in URL of the web app, e.g. https://app.maamulplus.com */
-  appUrl: string;
+  /** [[FILL]] Sign-in URL of each edition's web app. The header "Sign in" menu offers both. */
+  appUrls: Record<Edition, string>;
   locale: string;
   description: string;
   city: string;
@@ -45,7 +47,10 @@ export const site: SiteConfig = {
   name: 'MaamulPlus',
   legalName: 'MaamulPlus',
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://maamulplus.com').replace(/\/$/, ''),
-  appUrl: process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.maamulplus.com',
+  appUrls: {
+    enterprise: process.env.NEXT_PUBLIC_ENTERPRISE_APP_URL ?? 'https://app.maamulplus.com',
+    lite: process.env.NEXT_PUBLIC_LITE_APP_URL ?? 'https://lite.maamulplus.com',
+  },
   locale: 'en_US',
   description:
     'Business management software for traders in Somaliland: sales, stock, credit, payments and accounting in USD and SLSH.',

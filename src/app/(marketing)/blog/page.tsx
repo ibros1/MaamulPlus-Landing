@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { NewsletterForm } from '@/components/forms/newsletter-form';
+import { NewsletterFormLazy } from '@/components/forms/newsletter-form-lazy';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { CtaBand } from '@/components/sections/cta-band';
 import { PageHero } from '@/components/sections/page-hero';
@@ -47,7 +47,7 @@ export default function BlogIndex() {
             ))}
           </div>
           <div style={{ marginTop: 56 }}>
-            <NewsletterForm />
+            <NewsletterFormLazy />
           </div>
         </div>
       </section>

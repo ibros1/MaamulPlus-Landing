@@ -4,7 +4,7 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 import { captureUtm } from '@/components/forms/form-utils';
 import { track } from '@/lib/analytics';
-import { publicEnv } from '@/lib/env';
+import { publicEnv } from '@/lib/public-env';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setConsent } from '@/store/consentSlice';
 import { Button } from './button';

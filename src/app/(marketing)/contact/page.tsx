@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Clock, Mail, MapPin, Phone } from 'lucide-react';
-import { ContactForm } from '@/components/forms/contact-form';
+import { ContactFormLazy } from '@/components/forms/contact-form-lazy';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { PageHero } from '@/components/sections/page-hero';
 import { Button } from '@/components/ui/button';
@@ -93,7 +93,7 @@ export default function ContactPage() {
               </Button>
             </div>
           </div>
-          <ContactForm />
+          <ContactFormLazy />
         </div>
       </section>
       <JsonLd

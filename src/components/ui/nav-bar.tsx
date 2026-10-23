@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useCallback, useEffect, useRef } from 'react';
+import type { Edition } from '@/config/site';
 import { mainNav, navCopy } from '@/content/navigation';
 import { track } from '@/lib/analytics';
 import { cn } from '@/lib/cn';
@@ -11,6 +12,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setMobileNavOpen } from '@/store/uiSlice';
 import { Button } from './button';
 import { Logo } from './logo';
+import { SignInMenu } from './sign-in-menu';
 import { ThemeToggle } from './theme-toggle';
 
 function isCurrent(pathname: string, href: string): boolean {
@@ -18,7 +20,7 @@ function isCurrent(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function NavBar({ appUrl }: { appUrl: string }) {
+export function NavBar({ appUrls }: { appUrls: Record<Edition, string> }) {
   const pathname = usePathname();
   const open = useAppSelector((s) => s.ui.mobileNavOpen);
   const dispatch = useAppDispatch();
@@ -70,8 +72,6 @@ export function NavBar({ appUrl }: { appUrl: string }) {
     return () => document.removeEventListener('keydown', onKey);
   }, [open, close]);
 
-  const onSignIn = () => track({ name: 'outbound_app_signin', props: { location: 'nav' } });
-
   return (
     <header className={cn('site-head', open && 'open')}>
       <nav className="mp-nav" aria-label={navCopy.mainLabel}>
@@ -90,9 +90,7 @@ export function NavBar({ appUrl }: { appUrl: string }) {
           </ul>
           <div className="mp-nav__end">
             <ThemeToggle label={navCopy.theme} />
-            <Button href={appUrl} variant="ghost" size="sm" className="nav-signin" rel="nofollow" onClick={onSignIn}>
-              {navCopy.signIn}
-            </Button>
+            <SignInMenu appUrls={appUrls} />
             <Button href="/demo" variant="primary" size="sm" pill className="nav-cta" ctaLocation="nav">
               {navCopy.cta}
             </Button>
@@ -124,11 +122,17 @@ export function NavBar({ appUrl }: { appUrl: string }) {
                 </Link>
               </li>
             ))}
-            <li>
-              <a href={appUrl} rel="nofollow" onClick={onSignIn}>
-                {navCopy.signIn}
-              </a>
-            </li>
+            {(['enterprise', 'lite'] as const).map((edition) => (
+              <li key={edition} className="mobile-menu__signin">
+                <a
+                  href={appUrls[edition]}
+                  rel="nofollow"
+                  onClick={() => track({ name: 'outbound_app_signin', props: { location: 'mobile-nav', edition } })}
+                >
+                  {navCopy.signInEditions[edition].mobile}
+                </a>
+              </li>
+            ))}
           </ul>
           <Button href="/demo" variant="primary" block ctaLocation="mobile-nav" onClick={() => close(false)}>
             {navCopy.cta}

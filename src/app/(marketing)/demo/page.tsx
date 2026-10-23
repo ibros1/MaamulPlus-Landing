@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Check } from 'lucide-react';
-import { DemoForm } from '@/components/forms/demo-form';
+import { DemoFormLazy } from '@/components/forms/demo-form-lazy';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { FaqSection } from '@/components/sections/faq-section';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
@@ -41,7 +41,7 @@ export default function DemoPage() {
                 ))}
               </ul>
             </div>
-            <DemoForm redirectOnSuccess headingLevel="h2" />
+            <DemoFormLazy redirectOnSuccess headingLevel="h2" />
           </div>
         </div>
       </section>

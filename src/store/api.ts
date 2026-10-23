@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { ApiOk, ContactInput, DemoRequestInput, NewsletterInput } from '@/lib/schemas';
+import { dynamicMiddleware, rootReducer } from './store';
 
 /** Every browser → API call goes through here. */
 export const api = createApi({
@@ -17,5 +18,9 @@ export const api = createApi({
     }),
   }),
 });
+
+// Lazy-load the api into the store the first time a form module is imported.
+rootReducer.inject(api);
+dynamicMiddleware.addMiddleware(api.middleware);
 
 export const { useSubmitDemoRequestMutation, useSubmitContactMutation, useSubscribeNewsletterMutation } = api;

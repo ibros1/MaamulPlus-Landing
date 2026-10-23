@@ -7,7 +7,7 @@ export type AnalyticsEvent =
   | { name: 'demo_submit_success'; props: { edition: string; branches: string } }
   | { name: 'demo_submit_error'; props: { status: string } }
   | { name: 'contact_submit_success'; props: { topic: string } }
-  | { name: 'outbound_app_signin'; props: { location: string } };
+  | { name: 'outbound_app_signin'; props: { location: string; edition: string } };
 
 type PlausibleFn = (event: string, options?: { props?: Record<string, string> }) => void;
 type GtagFn = (command: 'event', event: string, params?: Record<string, string>) => void;

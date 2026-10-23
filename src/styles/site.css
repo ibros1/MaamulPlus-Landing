@@ -91,9 +91,76 @@
     }
   }
 
-  /* Mobile menu sign-in row */
+  /* Mobile menu sign-in rows */
   .mobile-menu li:last-child a {
     border-bottom: 0;
+  }
+  .mobile-menu .mobile-menu__signin a {
+    color: var(--ink-muted);
+  }
+
+  /* Header sign-in menu: pick an edition */
+  .signin-menu {
+    position: relative;
+  }
+  .signin-menu__chev {
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+    transition: transform 0.15s;
+  }
+  .signin-menu [aria-expanded='true'] .signin-menu__chev {
+    transform: rotate(180deg);
+  }
+  .signin-menu__panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 60;
+    width: 288px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+  }
+  .signin-menu__panel[hidden] {
+    display: none;
+  }
+  .signin-menu__title {
+    margin: 0;
+    padding: 8px 12px 6px;
+    font: 500 12px/16px var(--font-sans);
+    color: var(--ink-muted);
+  }
+  .signin-menu__panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+  }
+  .signin-menu__panel a {
+    display: grid;
+    gap: 2px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+  }
+  .signin-menu__panel a:hover {
+    background: var(--surface-alt);
+  }
+  .signin-menu__panel a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: -2px;
+  }
+  .signin-menu__label {
+    font: 500 14px/20px var(--font-sans);
+    color: var(--heading);
+  }
+  .signin-menu__hint {
+    font: 400 13px/18px var(--font-sans);
+    color: var(--ink-muted);
   }
 
   /* Links inside copy */
@@ -876,5 +943,32 @@
   .done-well svg {
     width: 30px;
     height: 30px;
+  }
+}
+
+@layer components {
+  .form .form-title {
+    margin: 0;
+    font: 500 20px/28px var(--font-display);
+    color: var(--heading);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Placeholder heights match the rendered forms at each breakpoint (measured), avoiding layout shift. */
+  .form-ph--demo {
+    min-height: 694px;
+  }
+  .form-ph--contact {
+    min-height: 502px;
+  }
+  @media (max-width: 520px) {
+    .form-ph--demo {
+      min-height: 928px;
+    }
+    .form-ph--contact {
+      min-height: 662px;
+    }
   }
 }

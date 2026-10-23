@@ -44,10 +44,3 @@ export function serverEnv(): ServerEnv {
   cached = parsed;
   return parsed;
 }
-
-export const publicEnv = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://maamulplus.com',
-  turnstileSiteKey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '',
-  plausibleDomain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? '',
-  gaId: process.env.NEXT_PUBLIC_GA_ID ?? '',
-} as const;

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { publicEnv } from '@/lib/env';
+import { publicEnv } from '@/lib/public-env';
 
 /** Token sent when no site key is configured (local dev). The server only accepts it outside production. */
 export const DEV_TURNSTILE_TOKEN = 'dev-turnstile-disabled';

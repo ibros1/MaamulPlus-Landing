@@ -21,6 +21,6 @@ export default defineConfig({
     url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 300_000,
-    env: { E2E_MOCK_LEADS: '1', NEXT_PUBLIC_SITE_URL: 'https://maamulplus.com' },
+    env: { E2E_MOCK_LEADS: '1', NEXT_PUBLIC_SITE_URL: 'https://maamulplus.com', NEXT_DIST_DIR: '.next-prod' },
   },
 });

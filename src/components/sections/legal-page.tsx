@@ -14,7 +14,7 @@ export function LegalPage({ doc, path }: { doc: LegalDoc; path: string }) {
         title={doc.title}
         lead={doc.intro}
       />
-      <section className="flush-top" aria-label={doc.title}>
+      <section className="flush-top">
         <div className="wrap">
           <div className="prose">
             <p>

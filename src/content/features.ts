@@ -83,15 +83,40 @@ export const features: DetailPage[] = [
     screenLabel:
       'The MaamulPlus chart of accounts: assets, liabilities, income and expenses with account codes, types and balances for Hargeisa Spare Parts.',
     availability: 'enterprise',
-    availabilityNote: 'Available in MaamulPlus Enterprise. MaamulPlus Lite keeps the essential statements without accounting terms.',
+    availabilityNote:
+      'Available in MaamulPlus Enterprise. MaamulPlus Lite keeps the essential statements without accounting terms.',
     benefitsTitle: 'Books that keep themselves.',
     benefits: [
-      { icon: 'book', title: 'A chart of accounts that fits you', body: 'Start from a ready chart for trading businesses, then add your own banks, wallets and expense heads with your own codes.' },
-      { icon: 'check', title: 'Posted automatically', body: 'Daily work posts its own balanced journal. No double typing, no end-of-month catch-up.' },
-      { icon: 'file', title: 'Manual journals when needed', body: 'Your accountant can record accruals, corrections and opening balances with a clear reference and memo.' },
-      { icon: 'scale', title: 'Trial balance on demand', body: 'Debits equal credits, every time. Check the trial balance for any period and any branch.' },
-      { icon: 'chart', title: 'Statements in one click', body: 'Income statement, balance sheet and cash flow, filtered by period and branch, exported to PDF or CSV.' },
-      { icon: 'history', title: 'A trail you can follow', body: 'Every journal line keeps the customer, branch and user, and links back to the invoice or payment behind it.' },
+      {
+        icon: 'book',
+        title: 'A chart of accounts that fits you',
+        body: 'Start from a ready chart for trading businesses, then add your own banks, wallets and expense heads with your own codes.',
+      },
+      {
+        icon: 'check',
+        title: 'Posted automatically',
+        body: 'Daily work posts its own balanced journal. No double typing, no end-of-month catch-up.',
+      },
+      {
+        icon: 'file',
+        title: 'Manual journals when needed',
+        body: 'Your accountant can record accruals, corrections and opening balances with a clear reference and memo.',
+      },
+      {
+        icon: 'scale',
+        title: 'Trial balance on demand',
+        body: 'Debits equal credits, every time. Check the trial balance for any period and any branch.',
+      },
+      {
+        icon: 'chart',
+        title: 'Statements in one click',
+        body: 'Income statement, balance sheet and cash flow, filtered by period and branch, exported to PDF or CSV.',
+      },
+      {
+        icon: 'history',
+        title: 'A trail you can follow',
+        body: 'Every journal line keeps the customer, branch and user, and links back to the invoice or payment behind it.',
+      },
     ],
     sections: [
       {
@@ -117,10 +142,22 @@ export const features: DetailPage[] = [
     ],
     related: ['reports', 'credit-and-payments', 'sales-and-invoicing'],
     faq: [
-      { q: 'Do I need to know accounting to use it?', a: 'No. Daily work posts its own entries in the background. Accounting screens are there for the owner or accountant who wants them.' },
-      { q: 'Can I import my opening balances?', a: 'Yes. During setup we import your opening balances for every account, customer and supplier so the books start correct.' },
-      { q: 'Does it support more than one branch?', a: 'Yes. Every journal line records its branch, and every statement can be filtered by branch or shown for the whole business.' },
-      { q: 'Can I export the books?', a: 'Yes. Journals, the trial balance and every statement export to CSV or PDF.' },
+      {
+        q: 'Do I need to know accounting to use it?',
+        a: 'No. Daily work posts its own entries in the background. Accounting screens are there for the owner or accountant who wants them.',
+      },
+      {
+        q: 'Can I import my opening balances?',
+        a: 'Yes. During setup we import your opening balances for every account, customer and supplier so the books start correct.',
+      },
+      {
+        q: 'Does it support more than one branch?',
+        a: 'Yes. Every journal line records its branch, and every statement can be filtered by branch or shown for the whole business.',
+      },
+      {
+        q: 'Can I export the books?',
+        a: 'Yes. Journals, the trial balance and every statement export to CSV or PDF.',
+      },
     ],
   },
   {
@@ -140,12 +177,36 @@ export const features: DetailPage[] = [
       'Products and stock levels are in both editions. Multiple branches, transfers and adjustments are in MaamulPlus Enterprise.',
     benefitsTitle: 'Know what is on the shelf.',
     benefits: [
-      { icon: 'package', title: 'Stock that moves with sales', body: 'Each invoice reduces stock and each purchase adds it. No separate stock count to update.' },
-      { icon: 'warehouse', title: 'Every branch, one view', body: 'See stock per branch side by side, or switch to one branch at a time.' },
-      { icon: 'swap', title: 'Transfers on both sides', body: 'Send stock from the main store to a branch. It leaves one and arrives at the other with a reference.' },
-      { icon: 'layers', title: 'Cartons and pieces', body: 'Buy by the carton, sell by the piece. Unit conversions keep the count right at both levels.' },
-      { icon: 'tag', title: 'Reorder levels', body: 'Set a minimum for each product and see what is running low before a customer asks for it.' },
-      { icon: 'file', title: 'Adjustments with a reason', body: 'Damaged, lost or found stock is adjusted with a reason and a user, so differences are explained.' },
+      {
+        icon: 'package',
+        title: 'Stock that moves with sales',
+        body: 'Each invoice reduces stock and each purchase adds it. No separate stock count to update.',
+      },
+      {
+        icon: 'warehouse',
+        title: 'Every branch, one view',
+        body: 'See stock per branch side by side, or switch to one branch at a time.',
+      },
+      {
+        icon: 'swap',
+        title: 'Transfers on both sides',
+        body: 'Send stock from the main store to a branch. It leaves one and arrives at the other with a reference.',
+      },
+      {
+        icon: 'layers',
+        title: 'Cartons and pieces',
+        body: 'Buy by the carton, sell by the piece. Unit conversions keep the count right at both levels.',
+      },
+      {
+        icon: 'tag',
+        title: 'Reorder levels',
+        body: 'Set a minimum for each product and see what is running low before a customer asks for it.',
+      },
+      {
+        icon: 'file',
+        title: 'Adjustments with a reason',
+        body: 'Damaged, lost or found stock is adjusted with a reason and a user, so differences are explained.',
+      },
     ],
     sections: [
       {
@@ -171,10 +232,22 @@ export const features: DetailPage[] = [
     ],
     related: ['sales-and-invoicing', 'sales-agents', 'reports'],
     faq: [
-      { q: 'Can I see stock for each branch?', a: 'Yes. Stock is kept per branch, and you can view all branches together or one at a time.' },
-      { q: 'Does it warn me about low stock?', a: 'Yes. Set a reorder level per product and MaamulPlus lists everything that has fallen below it.' },
-      { q: 'Can I sell by the piece and buy by the carton?', a: 'Yes. Unit conversions let you buy and sell in different units while keeping one accurate count.' },
-      { q: 'How do I do a stock count?', a: 'Record the counted quantities and MaamulPlus creates adjustments for the differences, each with a reason.' },
+      {
+        q: 'Can I see stock for each branch?',
+        a: 'Yes. Stock is kept per branch, and you can view all branches together or one at a time.',
+      },
+      {
+        q: 'Does it warn me about low stock?',
+        a: 'Yes. Set a reorder level per product and MaamulPlus lists everything that has fallen below it.',
+      },
+      {
+        q: 'Can I sell by the piece and buy by the carton?',
+        a: 'Yes. Unit conversions let you buy and sell in different units while keeping one accurate count.',
+      },
+      {
+        q: 'How do I do a stock count?',
+        a: 'Record the counted quantities and MaamulPlus creates adjustments for the differences, each with a reason.',
+      },
     ],
   },
   {
@@ -194,12 +267,36 @@ export const features: DetailPage[] = [
       'Sales, invoices and receipts are in both editions. Quotations, returns, held sales and barcode scanning are in MaamulPlus Enterprise.',
     benefitsTitle: 'Fast at the counter, right in the books.',
     benefits: [
-      { icon: 'receipt', title: 'Cash or credit on every invoice', body: 'Take full payment, part payment or none. The balance is tracked to the cent against the customer.' },
-      { icon: 'wallet', title: 'Pay any way', body: 'Cash, bank, Zaad, eDahab or Sahal. Each payment lands in the right account.' },
-      { icon: 'printer', title: 'Print or share', body: 'A4 invoices, thermal receipts or PDF to send on WhatsApp.' },
-      { icon: 'file', title: 'Quotations that become invoices', body: 'Send a quote, then turn it into an invoice with one click when the customer agrees.' },
-      { icon: 'swap', title: 'Returns done properly', body: 'A sales return puts the stock back and reduces what the customer owes or refunds them.' },
-      { icon: 'scan', title: 'Barcodes and held sales', body: 'Scan items, hold a sale while the customer decides, and serve the next person.' },
+      {
+        icon: 'receipt',
+        title: 'Cash or credit on every invoice',
+        body: 'Take full payment, part payment or none. The balance is tracked to the cent against the customer.',
+      },
+      {
+        icon: 'wallet',
+        title: 'Pay any way',
+        body: 'Cash, bank, Zaad, eDahab or Sahal. Each payment lands in the right account.',
+      },
+      {
+        icon: 'printer',
+        title: 'Print or share',
+        body: 'A4 invoices, thermal receipts or PDF to send on WhatsApp.',
+      },
+      {
+        icon: 'file',
+        title: 'Quotations that become invoices',
+        body: 'Send a quote, then turn it into an invoice with one click when the customer agrees.',
+      },
+      {
+        icon: 'swap',
+        title: 'Returns done properly',
+        body: 'A sales return puts the stock back and reduces what the customer owes or refunds them.',
+      },
+      {
+        icon: 'scan',
+        title: 'Barcodes and held sales',
+        body: 'Scan items, hold a sale while the customer decides, and serve the next person.',
+      },
     ],
     sections: [
       {
@@ -225,10 +322,22 @@ export const features: DetailPage[] = [
     ],
     related: ['credit-and-payments', 'inventory', 'reports'],
     faq: [
-      { q: 'Can I give a customer credit on an invoice?', a: 'Yes. Any invoice can be fully paid, partly paid or on credit. The balance is added to the customer’s statement.' },
-      { q: 'Does it work with a receipt printer?', a: 'Yes. Print to a standard thermal receipt printer or an A4 printer, or save the invoice as a PDF.' },
-      { q: 'Can I take payment in SLSH?', a: 'Yes. Accept shillings at the day’s rate. The rate is saved on the payment so the history never changes.' },
-      { q: 'Can I see sales per cashier?', a: 'Yes. Every invoice records who sold it, and the sales summary groups totals by seller and branch.' },
+      {
+        q: 'Can I give a customer credit on an invoice?',
+        a: 'Yes. Any invoice can be fully paid, partly paid or on credit. The balance is added to the customer’s statement.',
+      },
+      {
+        q: 'Does it work with a receipt printer?',
+        a: 'Yes. Print to a standard thermal receipt printer or an A4 printer, or save the invoice as a PDF.',
+      },
+      {
+        q: 'Can I take payment in SLSH?',
+        a: 'Yes. Accept shillings at the day’s rate. The rate is saved on the payment so the history never changes.',
+      },
+      {
+        q: 'Can I see sales per cashier?',
+        a: 'Yes. Every invoice records who sold it, and the sales summary groups totals by seller and branch.',
+      },
     ],
   },
   {
@@ -247,12 +356,36 @@ export const features: DetailPage[] = [
     availabilityNote: 'Customer credit, statements and mobile money accounts are in both editions.',
     benefitsTitle: 'Know who owes what, and why.',
     benefits: [
-      { icon: 'shield', title: 'Credit limits at the till', body: 'Set a limit per customer. The invoice warns before a sale takes them over it.' },
-      { icon: 'file', title: 'A statement for every customer', body: 'Every invoice and payment, in date order, with the running balance. Print it or share it as PDF.' },
-      { icon: 'smartphone', title: 'Zaad, eDahab and Sahal as accounts', body: 'Each merchant wallet has its own balance, so you always know where the money landed.' },
-      { icon: 'coins', title: 'USD and SLSH', body: 'Balances stay in USD. Payments in shillings record the day’s rate.' },
-      { icon: 'history', title: 'Oldest debt first', body: 'See how long each invoice has been unpaid and who to call today.' },
-      { icon: 'truck', title: 'What you owe, too', body: 'Supplier bills and payments are tracked the same way, so you see money owed in both directions.' },
+      {
+        icon: 'shield',
+        title: 'Credit limits at the till',
+        body: 'Set a limit per customer. The invoice warns before a sale takes them over it.',
+      },
+      {
+        icon: 'file',
+        title: 'A statement for every customer',
+        body: 'Every invoice and payment, in date order, with the running balance. Print it or share it as PDF.',
+      },
+      {
+        icon: 'smartphone',
+        title: 'Zaad, eDahab and Sahal as accounts',
+        body: 'Each merchant wallet has its own balance, so you always know where the money landed.',
+      },
+      {
+        icon: 'coins',
+        title: 'USD and SLSH',
+        body: 'Balances stay in USD. Payments in shillings record the day’s rate.',
+      },
+      {
+        icon: 'history',
+        title: 'Oldest debt first',
+        body: 'See how long each invoice has been unpaid and who to call today.',
+      },
+      {
+        icon: 'truck',
+        title: 'What you owe, too',
+        body: 'Supplier bills and payments are tracked the same way, so you see money owed in both directions.',
+      },
     ],
     sections: [
       {
@@ -278,10 +411,22 @@ export const features: DetailPage[] = [
     ],
     related: ['sales-and-invoicing', 'accounting', 'reports'],
     faq: [
-      { q: 'Can I set a different credit limit for each customer?', a: 'Yes. Each customer has their own limit, and the till checks it before saving a credit invoice.' },
-      { q: 'Can a customer pay part of what they owe?', a: 'Yes. Record any amount. It is applied to the oldest open invoices first, or to the invoice you choose.' },
-      { q: 'How are Zaad and eDahab recorded?', a: 'Each merchant wallet is an account with its own balance. Payments and transfers move money in and out of it.' },
-      { q: 'Can I send a customer their statement?', a: 'Yes. Print the statement or share it as a PDF, for any date range.' },
+      {
+        q: 'Can I set a different credit limit for each customer?',
+        a: 'Yes. Each customer has their own limit, and the till checks it before saving a credit invoice.',
+      },
+      {
+        q: 'Can a customer pay part of what they owe?',
+        a: 'Yes. Record any amount. It is applied to the oldest open invoices first, or to the invoice you choose.',
+      },
+      {
+        q: 'How are Zaad and eDahab recorded?',
+        a: 'Each merchant wallet is an account with its own balance. Payments and transfers move money in and out of it.',
+      },
+      {
+        q: 'Can I send a customer their statement?',
+        a: 'Yes. Print the statement or share it as a PDF, for any date range.',
+      },
     ],
   },
   {
@@ -300,11 +445,31 @@ export const features: DetailPage[] = [
     availabilityNote: 'Available in MaamulPlus Enterprise.',
     benefitsTitle: 'Van sales without the guesswork.',
     benefits: [
-      { icon: 'route', title: 'A session per trip', body: 'Open a session with the stock the agent takes. Close it when they return.' },
-      { icon: 'users', title: 'Known customers only', body: 'Agents sell to customers on their route, with the same credit limits as the shop.' },
-      { icon: 'package', title: 'Out, sold, returned', body: 'For each item: how many went out, how many were sold and how many came back.' },
-      { icon: 'wallet', title: 'Money settled', body: 'Cash, mobile money and credit collected on the route are settled into the right accounts.' },
-      { icon: 'chart', title: 'Performance by agent', body: 'Compare agents by sales, returns and collections over any period.' },
+      {
+        icon: 'route',
+        title: 'A session per trip',
+        body: 'Open a session with the stock the agent takes. Close it when they return.',
+      },
+      {
+        icon: 'users',
+        title: 'Known customers only',
+        body: 'Agents sell to customers on their route, with the same credit limits as the shop.',
+      },
+      {
+        icon: 'package',
+        title: 'Out, sold, returned',
+        body: 'For each item: how many went out, how many were sold and how many came back.',
+      },
+      {
+        icon: 'wallet',
+        title: 'Money settled',
+        body: 'Cash, mobile money and credit collected on the route are settled into the right accounts.',
+      },
+      {
+        icon: 'chart',
+        title: 'Performance by agent',
+        body: 'Compare agents by sales, returns and collections over any period.',
+      },
     ],
     sections: [
       {
@@ -327,12 +492,28 @@ export const features: DetailPage[] = [
           'Because every session is recorded, you can see which routes sell, which products come back, and which agents collect well. That is the information you need to plan stock and set targets.',
         ],
       },
+      {
+        title: 'Getting started with agents.',
+        paragraphs: [
+          'Most distributors start with one or two agents and a short list of route customers. During setup we add your agents as users with the agent role, link each one to the customers on their route and set their credit limits. On the first day, each agent opens a session, takes stock out and starts selling from a phone or tablet.',
+          'Agents only see what they need: their own session, their customers and the products they carry. Owners and supervisors see every session, open or closed, with the shortages and collections of each.',
+        ],
+      },
     ],
     related: ['inventory', 'credit-and-payments', 'hr-payroll'],
     faq: [
-      { q: 'Can an agent sell on credit?', a: 'Yes, to known customers within their credit limit. The balance is added to the customer’s statement.' },
-      { q: 'What happens to stock the agent brings back?', a: 'Returned stock goes back into the branch when the session closes, and the count per item is recorded.' },
-      { q: 'Can I run several agents at once?', a: 'Yes. Each agent has their own session, and you can see all open sessions together.' },
+      {
+        q: 'Can an agent sell on credit?',
+        a: 'Yes, to known customers within their credit limit. The balance is added to the customer’s statement.',
+      },
+      {
+        q: 'What happens to stock the agent brings back?',
+        a: 'Returned stock goes back into the branch when the session closes, and the count per item is recorded.',
+      },
+      {
+        q: 'Can I run several agents at once?',
+        a: 'Yes. Each agent has their own session, and you can see all open sessions together.',
+      },
     ],
   },
   {
@@ -351,12 +532,32 @@ export const features: DetailPage[] = [
     availabilityNote: 'Available in MaamulPlus Enterprise.',
     benefitsTitle: 'Staff costs, clear and on time.',
     benefits: [
-      { icon: 'users', title: 'Employees and roles', body: 'Each employee with their branch, role, salary and start date.' },
-      { icon: 'banknote', title: 'One-step payroll', body: 'Run the month’s payroll, review it and pay everyone from the account you choose.' },
-      { icon: 'coins', title: 'Advances recovered', body: 'Advances are deducted from the next payslip automatically, so nothing is forgotten.' },
-      { icon: 'calculator', title: 'Deductions and bonuses', body: 'Add deductions, bonuses and overtime per employee per month.' },
+      {
+        icon: 'users',
+        title: 'Employees and roles',
+        body: 'Each employee with their branch, role, salary and start date.',
+      },
+      {
+        icon: 'banknote',
+        title: 'One-step payroll',
+        body: 'Run the month’s payroll, review it and pay everyone from the account you choose.',
+      },
+      {
+        icon: 'coins',
+        title: 'Advances recovered',
+        body: 'Advances are deducted from the next payslip automatically, so nothing is forgotten.',
+      },
+      {
+        icon: 'calculator',
+        title: 'Deductions and bonuses',
+        body: 'Add deductions, bonuses and overtime per employee per month.',
+      },
       { icon: 'printer', title: 'Payslips', body: 'Print or share a payslip for each employee.' },
-      { icon: 'book', title: 'Posted to the books', body: 'Salaries, advances and payments post to the right expense and liability accounts.' },
+      {
+        icon: 'book',
+        title: 'Posted to the books',
+        body: 'Salaries, advances and payments post to the right expense and liability accounts.',
+      },
     ],
     sections: [
       {
@@ -379,12 +580,29 @@ export const features: DetailPage[] = [
           'Each employee gets a payslip with their salary, deductions, advances and net pay. You get a payroll summary per branch and a full history for every person.',
         ],
       },
+      {
+        title: 'From the first employee to the whole team.',
+        paragraphs: [
+          'Setup is quick: add each employee with their branch, role, salary and start date, record any advances that are already outstanding, and choose the accounts you usually pay salaries from. The first payroll run then takes a few minutes.',
+          'Each month MaamulPlus lists everyone due to be paid, with deductions, bonuses and advance recoveries already applied. You check the list, adjust anything that changed and confirm. Salaries are paid from the chosen cash, bank or mobile money account, payslips are ready to print or share, and the salary expense appears in the income statement for that month.',
+          'When someone leaves, their history stays on record, so you can always answer questions about past pay.',
+        ],
+      },
     ],
     related: ['accounting', 'reports', 'sales-agents'],
     faq: [
-      { q: 'Can I pay salaries by Zaad or bank?', a: 'Yes. Choose the account to pay from when you run payroll, or pay different employees from different accounts.' },
-      { q: 'How are salary advances recovered?', a: 'The advance is recorded against the employee and deducted from the next payroll automatically.' },
-      { q: 'Can I see payroll per branch?', a: 'Yes. Every employee belongs to a branch, and payroll reports can be filtered by branch.' },
+      {
+        q: 'Can I pay salaries by Zaad or bank?',
+        a: 'Yes. Choose the account to pay from when you run payroll, or pay different employees from different accounts.',
+      },
+      {
+        q: 'How are salary advances recovered?',
+        a: 'The advance is recorded against the employee and deducted from the next payroll automatically.',
+      },
+      {
+        q: 'Can I see payroll per branch?',
+        a: 'Yes. Every employee belongs to a branch, and payroll reports can be filtered by branch.',
+      },
     ],
   },
   {
@@ -404,12 +622,32 @@ export const features: DetailPage[] = [
       'Essential statements are in both editions. The full set, including the trial balance and journal reports, is in MaamulPlus Enterprise.',
     benefitsTitle: 'Numbers you can act on.',
     benefits: [
-      { icon: 'banknote', title: 'Cash flow', body: 'Opening, money in, money out and closing, classified by what brought money in or took it out.' },
-      { icon: 'chart', title: 'Income statement', body: 'Sales, cost of goods, expenses and profit for any period.' },
-      { icon: 'scale', title: 'Balance sheet', body: 'What the business owns, what it owes and what is left for the owner.' },
+      {
+        icon: 'banknote',
+        title: 'Cash flow',
+        body: 'Opening, money in, money out and closing, classified by what brought money in or took it out.',
+      },
+      {
+        icon: 'chart',
+        title: 'Income statement',
+        body: 'Sales, cost of goods, expenses and profit for any period.',
+      },
+      {
+        icon: 'scale',
+        title: 'Balance sheet',
+        body: 'What the business owns, what it owes and what is left for the owner.',
+      },
       { icon: 'receipt', title: 'Sales summary', body: 'Sales by branch, by seller and by product.' },
-      { icon: 'store', title: 'By branch', body: 'Every report filters by branch, or shows all branches together.' },
-      { icon: 'file', title: 'PDF and CSV', body: 'Export any report to share with a partner, bank or accountant.' },
+      {
+        icon: 'store',
+        title: 'By branch',
+        body: 'Every report filters by branch, or shows all branches together.',
+      },
+      {
+        icon: 'file',
+        title: 'PDF and CSV',
+        body: 'Export any report to share with a partner, bank or accountant.',
+      },
     ],
     sections: [
       {
@@ -432,12 +670,28 @@ export const features: DetailPage[] = [
           'Pick any period, choose one branch or all of them, and export to PDF or CSV. Compare this month with last month, or one branch with another, in a few clicks.',
         ],
       },
+      {
+        title: 'Reports your partners and bank understand.',
+        paragraphs: [
+          'Many traders in Hargeisa are asked for numbers by a business partner, a family investor or a bank. MaamulPlus statements follow the standard layout an accountant expects, with your business name, the period and the branch on every page, so you can share them as they are.',
+          'Because every figure links back to the invoices and payments behind it, you can answer follow-up questions in the meeting instead of promising to check later.',
+        ],
+      },
     ],
     related: ['accounting', 'credit-and-payments', 'inventory'],
     faq: [
-      { q: 'Can I get reports for one branch?', a: 'Yes. Every report can be filtered by branch or shown for the whole business.' },
-      { q: 'Which reports are in MaamulPlus Lite?', a: 'Lite includes the sales summary, cash flow, income statement and balance sheet in plain language. Enterprise adds the trial balance and journal reports.' },
-      { q: 'Can I export to Excel?', a: 'Yes. Export any report to CSV, which opens in Excel or Google Sheets, or to PDF.' },
+      {
+        q: 'Can I get reports for one branch?',
+        a: 'Yes. Every report can be filtered by branch or shown for the whole business.',
+      },
+      {
+        q: 'Which reports are in MaamulPlus Lite?',
+        a: 'Lite includes the sales summary, cash flow, income statement and balance sheet in plain language. Enterprise adds the trial balance and journal reports.',
+      },
+      {
+        q: 'Can I export to Excel?',
+        a: 'Yes. Export any report to CSV, which opens in Excel or Google Sheets, or to PDF.',
+      },
     ],
   },
 ];

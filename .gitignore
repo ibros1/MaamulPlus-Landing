@@ -1,5 +1,6 @@
 node_modules/
 .next/
+.next-prod/
 out/
 coverage/
 playwright-report/
@@ -11,3 +12,6 @@ test-results/
 next-env.d.ts
 # Extracted from maamulplus-website-kit.zip (the zip itself is committed)
 maamulplus-website-kit/
+
+# Playwright visual baselines are regenerated from the reference on every run
+e2e/*-snapshots/
