@@ -26,21 +26,26 @@ function clean(source: NodeJS.ProcessEnv): Record<string, string> {
 
 let cached: ServerEnv | undefined;
 
+/** Lead-pipeline settings that production needs before the forms can accept requests. */
+export function missingLeadEnv(env: ServerEnv): string[] {
+  if (env.NODE_ENV !== 'production' || env.E2E_MOCK_LEADS) return [];
+  const missing: string[] = [];
+  if (!env.TURNSTILE_SECRET_KEY) missing.push('TURNSTILE_SECRET_KEY');
+  if (!env.LEADS_WEBHOOK_URL && !(env.RESEND_API_KEY && env.LEADS_TO_EMAIL && env.LEADS_FROM_EMAIL)) {
+    missing.push('RESEND_API_KEY + LEADS_TO_EMAIL + LEADS_FROM_EMAIL (or LEADS_WEBHOOK_URL)');
+  }
+  return missing;
+}
+
 /**
- * Reads and validates server env. In production the lead pipeline must be configured,
- * otherwise this throws the first time an API route runs (and `pnpm verify:env` fails the deploy).
+ * Reads and validates server env. A production deploy without the lead pipeline still serves the
+ * site; the API routes answer 503 (see lead-handler) and this logs what is missing once per instance.
  */
 export function serverEnv(): ServerEnv {
   if (cached) return cached;
   const parsed = serverSchema.parse(clean(process.env));
-  if (parsed.NODE_ENV === 'production' && !parsed.E2E_MOCK_LEADS) {
-    const missing: string[] = [];
-    if (!parsed.TURNSTILE_SECRET_KEY) missing.push('TURNSTILE_SECRET_KEY');
-    if (!parsed.LEADS_WEBHOOK_URL && !(parsed.RESEND_API_KEY && parsed.LEADS_TO_EMAIL && parsed.LEADS_FROM_EMAIL)) {
-      missing.push('RESEND_API_KEY + LEADS_TO_EMAIL + LEADS_FROM_EMAIL (or LEADS_WEBHOOK_URL)');
-    }
-    if (missing.length) throw new Error(`Missing required server env: ${missing.join(', ')}`);
-  }
+  const missing = missingLeadEnv(parsed);
+  if (missing.length) console.error(`[env] Lead forms are off until these are set: ${missing.join(', ')}`);
   cached = parsed;
   return parsed;
 }

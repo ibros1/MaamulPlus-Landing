@@ -86,6 +86,20 @@ describe('POST /api/demo-request', () => {
     expect(res.status).toBe(502);
     expect(JSON.stringify(await res.json())).not.toContain('Abdi');
   });
+
+  it('answers 503 in production until the lead pipeline is configured', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    vi.spyOn(console, 'error').mockImplementation(() => undefined);
+    try {
+      const res = await (await handler())(post(valid(), '10.0.0.11'));
+      expect(res.status).toBe(503);
+      expect(await res.json()).toMatchObject({ ok: false, error: expect.stringMatching(/call or email/) });
+      expect(deliverLead).not.toHaveBeenCalled();
+    } finally {
+      vi.unstubAllEnvs();
+      vi.restoreAllMocks();
+    }
+  });
 });
 
 describe('helpers', () => {

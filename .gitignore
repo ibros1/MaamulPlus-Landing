@@ -12,6 +12,7 @@ test-results/
 next-env.d.ts
 # Extracted from maamulplus-website-kit.zip (the zip itself is committed)
 maamulplus-website-kit/
+MaamulPlus-Logo-v2.zip
 
 # Playwright visual baselines are regenerated from the reference on every run
 e2e/*-snapshots/

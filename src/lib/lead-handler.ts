@@ -2,6 +2,7 @@ import 'server-only';
 import { randomUUID } from 'node:crypto';
 import { NextResponse } from 'next/server';
 import type { z } from 'zod';
+import { missingLeadEnv, serverEnv } from './env';
 import { deliverLead, type Lead } from './leads';
 import type { LeadKind } from './leads/types';
 import { getLimiter } from './ratelimit';
@@ -31,6 +32,10 @@ export async function handleLead<S extends z.ZodType<AntiSpam & Record<string, u
   schema: S,
   toFields: (data: z.infer<S>) => Lead['fields'],
 ): Promise<NextResponse> {
+  if (missingLeadEnv(serverEnv()).length) {
+    return json({ ok: false, error: 'Online requests are not available yet. Please call or email us.' }, 503);
+  }
+
   let raw: unknown;
   try {
     raw = await req.json();

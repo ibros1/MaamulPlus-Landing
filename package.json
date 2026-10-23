@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "tokens": "tsx scripts/build-tokens.ts",
     "logos": "tsx scripts/build-logos.ts",

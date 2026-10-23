@@ -1,9 +1,11 @@
 /**
- * Fails a production deploy when the lead pipeline is not configured.
- * Runs in `prebuild`; only enforced on Vercel production builds or when REQUIRE_ENV=1,
- * so local `pnpm build` keeps working without secrets.
+ * Reports production env that is still missing. Runs in `prebuild`.
+ * A missing lead pipeline never breaks the deploy: the site goes live and the forms answer 503
+ * until the keys are set. Set REQUIRE_ENV=1 (e.g. in Vercel, once everything is configured)
+ * to fail the build instead, so a removed key can never slip into production.
  */
-const enforce = process.env.VERCEL_ENV === 'production' || process.env.REQUIRE_ENV === '1';
+const enforce = process.env.REQUIRE_ENV === '1';
+const isProduction = process.env.VERCEL_ENV === 'production';
 const has = (k: string) => (process.env[k] ?? '').trim() !== '';
 
 const missing: string[] = [];
@@ -20,5 +22,8 @@ if (missing.length) {
     console.error(msg);
     process.exit(1);
   }
-  console.warn(`[verify-env] ${msg}\n(not enforced for this build)`);
+  const effect = isProduction
+    ? 'The site will deploy; demo, contact and newsletter forms answer 503 until these are set.'
+    : '(not enforced for this build)';
+  console.warn(`[verify-env] ${msg}\n${effect}`);
 }
